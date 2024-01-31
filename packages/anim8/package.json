@@ -13,5 +13,10 @@
             "name": "Enrique García Cota",
             "url": "https://github.com/kikito"
         }
-    ]
+    ],
+    "dependencies": {
+        "@typescript-to-lua/language-extensions": "*",
+        "love-typescript-definitions": "*",
+        "lua-types": "*"
+    }
 }
