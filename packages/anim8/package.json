@@ -1,6 +1,10 @@
 {
     "name": "@love-packages/anim8",
     "version": "2.3.1",
+    "type": "commonjs",
+    "types": "./anim8.d.ts",
+    "main": "./anim8",
+    "files": ["anim8.lua", "anim8.d.ts"],
     "description": "An animation library for LÖVE",
     "keywords": ["love2d", "anim8", "animation"],
     "projects": ["https://github.com/kikito/anim8"],
@@ -9,6 +13,5 @@
             "name": "Enrique García Cota",
             "url": "https://github.com/kikito"
         }
-    ],
-    "files": ["anim8.lua", "anim8.d.ts"]
+    ]
 }
