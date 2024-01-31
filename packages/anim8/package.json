@@ -1,0 +1,14 @@
+{
+    "name": "@love-packages/anim8",
+    "version": "2.3.1",
+    "description": "An animation library for LÖVE",
+    "keywords": ["love2d", "anim8", "animation"],
+    "projects": ["https://github.com/kikito/anim8"],
+    "owners": [
+        {
+            "name": "Enrique García Cota",
+            "url": "https://github.com/kikito"
+        }
+    ],
+    "files": ["anim8.lua", "anim8.d.ts"]
+}
