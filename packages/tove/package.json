@@ -1,0 +1,27 @@
+{
+    "name": "@love-packages/tove",
+    "version": "2.3.1",
+    "type": "commonjs",
+    "types": "./init.d.ts",
+    "main": "./init",
+    "files": [
+        "init.lua",
+        "tove.d.ts",
+        "libTove.dll",
+        "libTove.dylib",
+        "libTove.so"
+    ],
+    "description": "Animated vector graphics for LÖVE.",
+    "keywords": ["love2d", "tove", "vector"],
+    "projects": ["https://github.com/poke1024/tove2d"],
+    "owners": [
+        {
+            "name": "Bernhard Liebl",
+            "url": "https://github.com/poke1024"
+        }
+    ],
+    "dependencies": {
+        "love-typescript-definitions": "*",
+        "lua-types": "*"
+    }
+}
