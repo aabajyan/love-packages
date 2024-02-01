@@ -21,6 +21,7 @@
         }
     ],
     "dependencies": {
+        "@typescript-to-lua/language-extensions": "*",
         "love-typescript-definitions": "*",
         "lua-types": "*"
     }

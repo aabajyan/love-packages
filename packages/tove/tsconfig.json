@@ -12,6 +12,7 @@
         "strict": true
     },
     "tstl": {
-        "buildMode": "library"
+        "buildMode": "library",
+        "luaTarget": "JIT"
     }
 }
