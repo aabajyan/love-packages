@@ -1,0 +1,21 @@
+{
+    "name": "@love-packages/hump",
+    "version": "0.4.2",
+    "type": "commonjs",
+    "types": "./hump.d.ts",
+    "files": ["camera.lua", "camera.d.ts"],
+    "description": "LÖVE Helper Utilities for Massive Progression ",
+    "keywords": ["love2d", "hump", "helper"],
+    "projects": ["https://github.com/vrld/hump"],
+    "owners": [
+        {
+            "name": "Matthias Richter",
+            "url": "https://github.com/vrld"
+        }
+    ],
+    "dependencies": {
+        "@typescript-to-lua/language-extensions": "*",
+        "love-typescript-definitions": "*",
+        "lua-types": "*"
+    }
+}
