@@ -15,6 +15,8 @@ export function pop(...args: unknown[]): void;
 
 export function current(): GameState;
 
+export function registerEvents(): void;
+
 /**
  * @customName new
  * @deprecated
