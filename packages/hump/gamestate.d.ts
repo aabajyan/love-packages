@@ -1,6 +1,10 @@
 import { Handlers } from "love-typescript-definitions/typings/love/handlers";
 
-export interface GameState extends Handlers { }
+export interface GameState extends Handlers {
+    enter?: (previous: GameState, ...args: unknown[]) => void;
+    leave?: (...args: unknown[]) => void;
+    resume?: (...args: unknown[]) => void;
+}
 
 /** @customName switch */
 export function switchTo(to: GameState, ...args: unknown[]): void;
