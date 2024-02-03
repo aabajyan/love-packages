@@ -9,22 +9,11 @@ declare module "@love-packages/hump/gamestate" {
             resume?: (...args: unknown[]) => void;
         }
 
-        /** @customName switch */
         function switchTo(to: GameState, ...args: unknown[]): void;
-
         function push(to: GameState, ...args: unknown[]): void;
-
         function pop(...args: unknown[]): void;
-
         function current(): GameState;
-
         function registerEvents(): void;
-
-        /**
-         * @customName new
-         * @deprecated
-         */
-        function newGameState(state: GameState): GameState;
     }
 
     export = gamestate;
