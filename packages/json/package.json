@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "luaVersion": "0.1.2",
     "description": "A simple JSON encode/decode library for Lua (rxi/json.lua)",
-    "main": "./json.lua",
+    "main": "./json",
     "types": "json.d.ts",
     "repository": {
         "type": "git",
