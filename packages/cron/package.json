@@ -1,0 +1,26 @@
+{
+    "name": "@luamod/cron",
+    "version": "2.0.2",
+    "luaVersion": "2.0.0",
+    "description": "Time-related functions for lua (kikito/cron.lua)",
+    "main": "./cron",
+    "types": "cron.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aabajyan/luamod.git",
+        "directory": "packages/cron"
+    },
+    "projects": [
+        "https://github.com/kikito/cron.lua"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "keywords": [
+        "lua",
+        "cron",
+        "timer"
+    ],
+    "license": "MIT"
+}

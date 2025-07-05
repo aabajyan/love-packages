@@ -1,0 +1,28 @@
+{
+    "name": "@luamod/json",
+    "version": "1.0.0",
+    "luaVersion": "0.1.2",
+    "description": "A simple JSON encode/decode library for Lua (rxi/json.lua)",
+    "main": "./json.lua",
+    "types": "json.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aabajyan/luamod.git",
+        "directory": "packages/json"
+    },
+    "projects": [
+        "https://github.com/rxi/json.lua"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "keywords": [
+        "lua",
+        "json",
+        "encode",
+        "decode",
+        "serialization"
+    ],
+    "license": "MIT"
+}
