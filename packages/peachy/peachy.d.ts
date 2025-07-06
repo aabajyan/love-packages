@@ -1,10 +1,10 @@
 /** @noSelf */
 declare module "@luamod/peachy" {
-    import type { Image, Quad } from "love.graphics";
+    import type { Image } from "love.graphics";
 
     // FIXME: It's still WIP
-    export interface Peachy {
-        setTag(tag: string): void;
+    interface Peachy<Tags extends string = string> {
+        setTag(tag: Tags): void;
         setFrame(frame: number): void;
         getFrame(): number;
         getJSON(): string;
@@ -15,7 +15,7 @@ declare module "@luamod/peachy" {
         pause(): void;
         play(): void;
         stop(onLast?: boolean): void;
-        onLoop(fn: (...args: any[]) => void, ...args: any[]): void;
+        onLoop<T extends unknown[]>(callback: (...args: T) => void, ...args: T): void;
         togglePlay(): void;
         getWidth(): number;
         getHeight(): number;
@@ -23,17 +23,13 @@ declare module "@luamod/peachy" {
     }
 
     /**
-     * Creates a new Peachy animation object.
-     * @param dataFile Path to an Aseprite JSON file or predecoded data.
-     * @param imageData LÖVE image to animate.
-     * @param initialTag Animation tag to use initially.
      * @customName new
+     * NB! This is modified from original Peachy to read image in relative path,
+     *     if we only provide the json. 
      */
-    function create(
+    function create<Tags extends string = string>(
         dataFile: string | object,
         imageData?: Image,
-        initialTag?: string
-    ): Peachy;
-
-    export default create;
+        initialTag?: Tags
+    ): Peachy<Tags>;
 }

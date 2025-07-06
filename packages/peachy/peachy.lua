@@ -36,41 +36,48 @@ local cron = require("@luamod/cron")
 peachy.__index = peachy
 
 --- Creates a new Peachy animation object.
-  --
-  -- If imageData isn't specified then Peachy will attempt to load it using the
-  -- filename from the JSON data.
-  --
-  -- If no initial tag is set then the object will be paused (i.e. not displayed) with no tag.
-  -- The animation will start playing immediately once created.
-  --
-  -- @usage
-  -- -- Load the image ourselves and set animation tag to "Spin".
-  -- -- Will start playing immediately.
-  -- spinner = peachy.new("spinner.json", love.graphics.newImage("spinner.png"), "Spin")
-  --
-  -- @tparam string dataFile a path to an Aseprite JSON file. It is also possible to pass a predecoded table,
-  -- which is useful for performance when creating large amounts of the same animation.
-  -- @tparam Image imageData a LÖVE image  to animate.
-  -- @tparam string initialTag the name of the animation tag to use initially.
-  -- @return the new Peachy object.
-  function peachy.new(dataFile, imageData, initialTag)
-    assert(dataFile ~= nil, "No JSON data!")
+-- NB! This is modified from original Peachy to read image in relative path.
+--
+-- If imageData isn't specified then Peachy will attempt to load it using the
+-- filename from the JSON data.
+--
+-- If no initial tag is set then the object will be paused (i.e. not displayed) with no tag.
+-- The animation will start playing immediately once created.
+--
+-- @usage
+-- -- Load the image ourselves and set animation tag to "Spin".
+-- -- Will start playing immediately.
+-- spinner = peachy.new("spinner.json", love.graphics.newImage("spinner.png"), "Spin")
+--
+-- @tparam string dataFile a path to an Aseprite JSON file. It is also possible to pass a predecoded table,
+-- which is useful for performance when creating large amounts of the same animation.
+-- @tparam Image imageData a LÖVE image  to animate.
+-- @tparam string initialTag the name of the animation tag to use initially.
+-- @return the new Peachy object.
+function peachy.new(dataFile, imageData, initialTag)
+  assert(dataFile ~= nil, "No JSON data!")
 
-    local self = setmetatable({}, peachy)
+  local self = setmetatable({}, peachy)
+  local directory = ""
 
-    --store the path to the passed json file
+  -- store the path to the passed json file
+  if type(dataFile) == "string" then
     self.json_path = dataFile
+    directory = dataFile:match("(.*/)") or ""
+  else
+    self.json_path = "(pre-decoded)"
+  end
 
-    -- check if datafile is a lua table (i.e. pre decoded)
-    if type(dataFile) == 'table' then
-      self._jsonData = dataFile
-    else
-      -- Read the data
-      self._jsonData = json.decode(love.filesystem.read(dataFile))
-    end
+  -- check if datafile is a lua table (i.e. pre decoded)
+  if type(dataFile) == 'table' then
+    self._jsonData = dataFile
+  else
+    -- Read the data
+    self._jsonData = json.decode(love.filesystem.read(dataFile))
+  end
 
   -- Load the image
-  self.image = imageData or love.graphics.newImage(self._jsonData.meta.image)
+  self.image = imageData or love.graphics.newImage(directory .. self._jsonData.meta.image)
 
   self:_checkImageSize()
 
@@ -98,7 +105,7 @@ end
 -- @tparam string tag the animation tag name to switch to.
 function peachy:setTag(tag)
   assert(tag, "No animation tag specified!")
-  assert(self.frameTags[tag], "Tag "..tag.." not found in frametags!")
+  assert(self.frameTags[tag], "Tag " .. tag .. " not found in frametags!")
 
   if self.tag == self.frameTags[tag] then
     return
@@ -127,7 +134,7 @@ end
 -- @tparam number frame the frame index to jump to.
 function peachy:setFrame(frame)
   if frame < 1 or frame > #self.tag.frames then
-    error("Frame "..frame.." is out of range of tag '"..self.tagName.."' (1.."..#self.tag.frames..")")
+    error("Frame " .. frame .. " is out of range of tag '" .. self.tagName .. "' (1.." .. #self.tag.frames .. ")")
   end
 
   self.frameIndex = frame
@@ -249,7 +256,7 @@ end
 --- Adds a callback function that will be called when the animation loops
 function peachy:onLoop(fn, ...)
   self.callback_onLoop = fn
-  self.args_onLoop = {...}
+  self.args_onLoop = { ... }
 end
 
 --- Toggle between playing/paused.
@@ -263,17 +270,17 @@ end
 
 --- Provides width stored in the metadata of a current frame
 function peachy:getWidth()
-    return self._jsonData.frames[self.frameIndex].frame.w
+  return self._jsonData.frames[self.frameIndex].frame.w
 end
 
 --- Provides height stored in the metadata of a current frame
 function peachy:getHeight()
-    return self._jsonData.frames[self.frameIndex].frame.h
+  return self._jsonData.frames[self.frameIndex].frame.h
 end
 
 --- Provides dimensions stored in the metadata of a current frame
 function peachy:getDimensions()
-    return self:getWidth(), self:getHeight()
+  return self:getWidth(), self:getHeight()
 end
 
 --- Internal: handles the ping-pong animation type.
