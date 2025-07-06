@@ -1,12 +1,8 @@
 /** @noSelf */
 declare module "@luamod/json" {
-    function encode(value: unknown): string;
-    function decode<T>(text: string): T;
+    export function encode(value: unknown): string;
+    export function decode<T>(text: string): T;
 
-    const _default: {
-        after: typeof encode;
-        every: typeof decode;
-    };
-
+    const _default: typeof import("@luamod/json");
     export default _default;
 }

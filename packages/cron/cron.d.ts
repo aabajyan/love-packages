@@ -7,7 +7,7 @@ declare module "@luamod/cron" {
     /**
      * Represents a scheduled clock/timer.
      */
-    interface Clock {
+    export interface Clock {
         /**
          * The current running time of the clock.
          */
@@ -34,7 +34,7 @@ declare module "@luamod/cron" {
      * @param args Arguments to pass to callback.
      * @returns A Clock object.
      */
-    function after<T extends unknown[]>(
+    export function after<T extends unknown[]>(
         time: number,
         callback: (...args: T) => void,
         ...args: T
@@ -47,16 +47,12 @@ declare module "@luamod/cron" {
      * @param args Arguments to pass to callback.
      * @returns A Clock object.
      */
-    function every<T extends unknown[]>(
+    export function every<T extends unknown[]>(
         time: number,
         callback: (...args: T) => void,
         ...args: T
     ): Clock;
 
-    const _default: {
-        after: typeof after;
-        every: typeof every;
-    };
-
+    const _default: typeof import("@luamod/cron");
     export default _default;
 }
