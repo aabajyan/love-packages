@@ -31,6 +31,15 @@ importers:
 
   packages/json: {}
 
+  packages/peachy:
+    dependencies:
+      '@luamod/cron':
+        specifier: '*'
+        version: 2.0.2
+      '@luamod/json':
+        specifier: '*'
+        version: 1.0.0
+
 packages:
 
   '@biomejs/biome@2.0.6':
@@ -85,6 +94,12 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
+
+  '@luamod/cron@2.0.2':
+    resolution: {integrity: sha512-+FcFqfCoe8CeZXDQAkMhdTthpQEwva6NwLFX+SeiNABy3NJLgow7oOw9OmNTKZn+glEc/Vas1ij3HJPtB+J3xw==}
+
+  '@luamod/json@1.0.0':
+    resolution: {integrity: sha512-rHX4TcXoGM3q22w8MSph+Tu6qKp4ZAI6XJgs9c5CM1RpOIZhJ51+GyQI5Cc4d7JG22FJ6/80xJjpxx6unRVD+w==}
 
   '@typescript-to-lua/language-extensions@1.19.0':
     resolution: {integrity: sha512-Os5wOKwviTD4LeqI29N0btYOjokSJ97iCf45EOjIABlb5IwNQy7AE/AqZJobRw3ywHH8+KzJUMkEirWPzh2tUA==}
@@ -185,6 +200,10 @@ snapshots:
 
   '@biomejs/cli-win32-x64@2.0.6':
     optional: true
+
+  '@luamod/cron@2.0.2': {}
+
+  '@luamod/json@1.0.0': {}
 
   '@typescript-to-lua/language-extensions@1.19.0': {}
 

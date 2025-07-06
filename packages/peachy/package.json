@@ -1,0 +1,31 @@
+{
+    "name": "@luamod/peachy",
+    "version": "1.0.0-alpha.0",
+    "luaVersion": "1.0.0-alpha",
+    "description": "A parser/renderer for Aseprite animations in LÖVE (josh-perry/peachy)",
+    "main": "./peachy",
+    "types": "peachy.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aabajyan/luamod.git",
+        "directory": "packages/peachy"
+    },
+    "projects": [
+        "https://github.com/josh-perry/peachy"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "dependencies": {
+        "@luamod/json": "*",
+        "@luamod/cron": "*"
+    },
+    "keywords": [
+        "lua",
+        "love2d",
+        "aseprite",
+        "animation"
+    ],
+    "license": "MIT"
+}
