@@ -2,7 +2,6 @@
 declare module "@luamod/peachy" {
     import type { Image } from "love.graphics";
 
-    // FIXME: It's still WIP
     interface Peachy<Tags extends string = string> {
         setTag(tag: Tags): void;
         setFrame(frame: number): void;
@@ -11,7 +10,8 @@ declare module "@luamod/peachy" {
         draw(x: number, y: number, rot?: number, sx?: number, sy?: number, ox?: number, oy?: number): void;
         update(dt: number): void;
         nextFrame(): void;
-        call_onLoop(): void;
+        /** @customName call_onLoop */
+        callOnLoop(): void;
         pause(): void;
         play(): void;
         stop(onLast?: boolean): void;
@@ -22,11 +22,7 @@ declare module "@luamod/peachy" {
         getDimensions(): LuaMultiReturn<[number, number]>;
     }
 
-    /**
-     * @customName new
-     * NB! This is modified from original Peachy to read image in relative path,
-     *     if we only provide the json. 
-     */
+    /** @customName new **/
     function create<Tags extends string = string>(
         dataFile: string | object,
         imageData?: Image,
