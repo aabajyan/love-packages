@@ -45,7 +45,7 @@ local function checkPositiveInteger(name, value)
 end
 
 local Clock = {}
-local Clock_mt = {__index = Clock}
+local Clock_mt = { __index = Clock }
 
 local function newClock(time, callback, update, ...)
   checkPositiveInteger('time', time)
@@ -54,7 +54,7 @@ local function newClock(time, callback, update, ...)
   return setmetatable({
     time     = time,
     callback = callback,
-    args     = {...},
+    args     = { ... },
     running  = 0,
     update   = update
   }, Clock_mt)
@@ -93,7 +93,6 @@ function Clock:reset(running)
   self.running = running
 end
 
-
 function cron.after(time, callback, ...)
   return newClock(time, callback, updateAfterClock, ...)
 end
@@ -103,4 +102,3 @@ function cron.every(time, callback, ...)
 end
 
 return cron
-
