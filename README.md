@@ -20,6 +20,19 @@ Install any package you want:
 pnpm add @luamod/<package>
 ```
 
+> **Note for pnpm users:**  
+> If you’re using pnpm, you’ll want to make sure dependencies are easy to find—like when `@luamod/peachy` needs `@luamod/json` or `@luamod/cron`. Just add this to your `pnpm-workspace.yaml`:
+>
+> ```yaml
+> packages:
+>   - "**"
+>
+> publicHoistPattern:
+>   - "@luamod/*"
+> ```
+>
+> This way, all your `@luamod/*` packages get hoisted to the root, so other packages can see them.
+
 After that, just require or import it like you normally would:
 
 ```ts
