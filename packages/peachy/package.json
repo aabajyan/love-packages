@@ -1,6 +1,6 @@
 {
     "name": "@luamod/peachy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "luaVersion": "1.0.0-alpha",
     "description": "A parser/renderer for Aseprite animations in LÖVE (josh-perry/peachy)",
     "main": "./peachy",

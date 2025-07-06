@@ -35,6 +35,9 @@ local cron = require("@luamod/cron")
 
 peachy.__index = peachy
 
+--- To support default export in Typescript
+peachy.default = peachy
+
 --- Creates a new Peachy animation object.
 -- NB! This is modified from original Peachy to read image in relative path.
 --

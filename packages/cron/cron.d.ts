@@ -34,7 +34,11 @@ declare module "@luamod/cron" {
      * @param args Arguments to pass to callback.
      * @returns A Clock object.
      */
-    function after<T extends unknown[]>(time: number, callback: (...args: T) => void, ...args: T): Clock;
+    function after<T extends unknown[]>(
+        time: number,
+        callback: (...args: T) => void,
+        ...args: T
+    ): Clock;
 
     /**
      * Schedules a callback to be called repeatedly every given time interval.
@@ -43,5 +47,16 @@ declare module "@luamod/cron" {
      * @param args Arguments to pass to callback.
      * @returns A Clock object.
      */
-    function every<T extends unknown[]>(time: number, callback: (...args: T) => void, ...args: T): Clock;
+    function every<T extends unknown[]>(
+        time: number,
+        callback: (...args: T) => void,
+        ...args: T
+    ): Clock;
+
+    const _default: {
+        after: typeof after;
+        every: typeof every;
+    };
+
+    export default _default;
 }

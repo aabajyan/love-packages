@@ -1,6 +1,6 @@
 {
     "name": "@luamod/json",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "luaVersion": "0.1.2",
     "description": "A simple JSON encode/decode library for Lua (rxi/json.lua)",
     "main": "./json",
