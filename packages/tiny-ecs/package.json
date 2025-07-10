@@ -1,0 +1,26 @@
+{
+    "name": "@luamod/tiny-ecs",
+    "version": "1.0.0",
+    "luaVersion": "1.0.0",
+    "description": "A tiny ECS library for Lua (bakpakin/tiny-ecs)",
+    "main": "./tiny-ecs",
+    "types": "tiny-ecs.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aabajyan/luamod.git",
+        "directory": "packages/tiny-ecs"
+    },
+    "projects": [
+        "https://github.com/bakpakin/tiny-ecs"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "keywords": [
+        "lua",
+        "ecs",
+        "tiny-ecs"
+    ],
+    "license": "MIT"
+}
