@@ -22,6 +22,7 @@
         "@luamod/json": "workspace:",
         "@luamod/peachy": "workspace:",
         "@luamod/tiny-ecs": "workspace:",
-        "@luamod/base64": "workspace:"
+        "@luamod/base64": "workspace:",
+        "@luamod/gamera": "workspace:"
     }
 }

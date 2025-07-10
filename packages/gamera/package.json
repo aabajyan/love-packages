@@ -1,0 +1,27 @@
+{
+    "name": "@luamod/gamera",
+    "version": "1.0.0",
+    "luaVersion": "1.0.1",
+    "description": "A camera system for LÖVE (kikito/gamera)",
+    "main": "./gamera",
+    "types": "gamera.d.ts",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aabajyan/luamod.git",
+        "directory": "packages/gamera"
+    },
+    "projects": [
+        "https://github.com/kikito/gamera"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "keywords": [
+        "lua",
+        "love2d",
+        "gamera",
+        "camera"
+    ]
+}
