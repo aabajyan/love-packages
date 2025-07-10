@@ -27,6 +27,34 @@ importers:
         specifier: 1.31.2
         version: 1.31.2(typescript@5.8.3)
 
+  apps/playground:
+    dependencies:
+      '@luamod/cron':
+        specifier: 'workspace:'
+        version: link:../../packages/cron
+      '@luamod/json':
+        specifier: 'workspace:'
+        version: link:../../packages/json
+      '@luamod/peachy':
+        specifier: 'workspace:'
+        version: link:../../packages/peachy
+      '@luamod/tiny-ecs':
+        specifier: 'workspace:'
+        version: link:../../packages/tiny-ecs
+    devDependencies:
+      '@typescript-to-lua/language-extensions':
+        specifier: ^1.19.0
+        version: 1.19.0
+      love-typescript-definitions:
+        specifier: ^11.5.1
+        version: 11.5.1
+      lua-types:
+        specifier: ^2.13.1
+        version: 2.13.1
+      typescript-to-lua:
+        specifier: ^1.31.2
+        version: 1.31.2(typescript@5.8.3)
+
   packages/cron: {}
 
   packages/json: {}
@@ -39,6 +67,8 @@ importers:
       '@luamod/json':
         specifier: '*'
         version: 1.0.0
+
+  packages/tiny-ecs: {}
 
 packages:
 

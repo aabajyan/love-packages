@@ -1,0 +1,26 @@
+{
+    "name": "playground",
+    "private": true,
+    "description": "Local playground for testing luamod packages with TypeScript and LÖVE.",
+    "scripts": {
+        "start": "love dist --console",
+        "lint": "biome lint ./src",
+        "bundle": "npm run bundle:tstl && npm run bundle:copy",
+        "bundle:tstl": "tstl -p tsconfig.json",
+        "bundle:copy": "node -e \"require('fs').cpSync('./res', './dist/res', { recursive: true })\"",
+        "bundle:watch": "tstl -w -p tsconfig.json --sourceMapTraceback",
+        "fix": "biome lint ./src --apply"
+    },
+    "devDependencies": {
+        "@typescript-to-lua/language-extensions": "^1.19.0",
+        "love-typescript-definitions": "^11.5.1",
+        "lua-types": "^2.13.1",
+        "typescript-to-lua": "^1.31.2"
+    },
+    "dependencies": {
+        "@luamod/cron": "workspace:",
+        "@luamod/json": "workspace:",
+        "@luamod/peachy": "workspace:",
+        "@luamod/tiny-ecs": "workspace:"
+    }
+}
