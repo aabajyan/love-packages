@@ -1,16 +1,19 @@
-import { encode } from "@luamod/json";
+import { CronBasic } from "./examples/cron/basic";
 
 if (os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") === "1") {
     require("lldebugger").start();
 }
 
+const gameLoop = new CronBasic();
+
 love.load = () => {
-    love.graphics.setDefaultFilter("nearest", "nearest");
-    print(encode({ hello: "world" }))
+    gameLoop.load();
 };
 
-love.update = () => { };
+love.update = (dt) => {
+    gameLoop.update(dt);
+};
 
 love.draw = () => {
-    love.graphics.print(`FPS: ${love.timer.getFPS()}`, 10, 10);
+    gameLoop.draw();
 };
