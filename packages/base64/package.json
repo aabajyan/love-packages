@@ -1,0 +1,27 @@
+{
+    "name": "@luamod/base64",
+    "version": "1.0.0",
+    "luaVersion": "1.5.3",
+    "description": "Lua base64 encoder/decoder module (iskolbin/lbase64)",
+    "main": "./base64",
+    "types": "base64.d.ts",
+    "license": "MIT OR Unlicense",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aabajyan/luamod.git",
+        "directory": "packages/base64"
+    },
+    "projects": [
+        "https://github.com/iskolbin/lbase64"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "keywords": [
+        "lua",
+        "base64",
+        "encoder",
+        "decoder"
+    ]
+}

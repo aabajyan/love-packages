@@ -29,6 +29,9 @@ importers:
 
   apps/playground:
     dependencies:
+      '@luamod/base64':
+        specifier: 'workspace:'
+        version: link:../../packages/base64
       '@luamod/cron':
         specifier: 'workspace:'
         version: link:../../packages/cron
@@ -54,6 +57,8 @@ importers:
       typescript-to-lua:
         specifier: ^1.31.2
         version: 1.31.2(typescript@5.8.3)
+
+  packages/base64: {}
 
   packages/cron: {}
 
