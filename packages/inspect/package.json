@@ -1,0 +1,26 @@
+{
+    "name": "@luamod/inspect",
+    "version": "1.0.0",
+    "luaVersion": "3.1.0",
+    "description": "Human-readable representation of Lua tables (iskolbin/linspect)",
+    "main": "./inspect",
+    "types": "inspect.d.ts",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aabajyan/luamod.git",
+        "directory": "packages/inspect"
+    },
+    "projects": [
+        "https://github.com/kikito/inspect.lua"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "keywords": [
+        "lua",
+        "inspect",
+        "debug"
+    ]
+}

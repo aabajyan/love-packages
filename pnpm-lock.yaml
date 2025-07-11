@@ -35,6 +35,12 @@ importers:
       '@luamod/cron':
         specifier: 'workspace:'
         version: link:../../packages/cron
+      '@luamod/gamera':
+        specifier: 'workspace:'
+        version: link:../../packages/gamera
+      '@luamod/inspect':
+        specifier: 'workspace:'
+        version: link:../../packages/inspect
       '@luamod/json':
         specifier: 'workspace:'
         version: link:../../packages/json
@@ -61,6 +67,10 @@ importers:
   packages/base64: {}
 
   packages/cron: {}
+
+  packages/gamera: {}
+
+  packages/inspect: {}
 
   packages/json: {}
 
